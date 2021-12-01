@@ -38,8 +38,8 @@ function App() {
 
  
   return (
-    <div  style={{margin:'0 30%',}}>
-      <h1>Team</h1>
+    <div  style={{margin:'3% 40%'}}>
+      <h1 style={{textAlign: 'center',margin: '3% 5%',fontSize:'5rem'}}>Team</h1>
       <form onSubmit={addMember} >
         <input type="text" name="name" placeholder="Add Member..." required />
         <button style={{cursor: 'pointer',outline: 'none'}}>Add</button>
