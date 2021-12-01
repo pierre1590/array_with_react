@@ -46,7 +46,7 @@ function App() {
       </form>
       <h2>Team Leader</h2> 
         {/* Show the team leader */}
-        <h3 className="teamLeader">{members.length > 0 ? members[0].name : 'No Team Leader'}</h3>
+        <h3 className="teamLeader">{members.length > 0 ? members[0].name : <p style={{color:'red'}}>No Team Leader</p>}</h3>
       <h2>Team Members</h2>
       <ul>
        {/* Create a paragraph if the array is empty  */}
