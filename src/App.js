@@ -31,7 +31,7 @@ function App() {
   const addMember = (e) => {
     e.preventDefault();
     const newMember = {
-      id: members.length - 1 + 1,
+      id: (members.length - 1) + 1,
       name: e.target.name.value,
     };
     setMembers([...members, newMember]);
@@ -60,7 +60,11 @@ function App() {
       <h3 className="teamLeader">{teamLeader.name}</h3>
       <h2>Team Members</h2>
       {/* Show the team members */}
-      <List members={members} setTeamLeader={setTeamLeader} setMembers={setMembers}  />
+      <List
+        members={members}
+        setTeamLeader={setTeamLeader}
+        setMembers={setMembers}
+      />
       {/* Cancel the array with the reset button */}
       <DeleteMembers handleReset={handleReset} />
     </div>

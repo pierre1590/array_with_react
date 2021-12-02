@@ -1,8 +1,6 @@
-import './List.css';
+import "./List.css";
 
 const List = ({ members, setTeamLeader, setMembers }) => {
-  
-
   return (
     <ul>
       {/* Members list */}
@@ -14,8 +12,10 @@ const List = ({ members, setTeamLeader, setMembers }) => {
           <li key={index} style={{ fontSize: "1.5rem", listStyle: "none" }}>
             {member.name}
             {/* Create a button to delete a member */}
-            <button onClick={() => setMembers(members.filter((m, i) => i !== index))} className="btn_delete">
-           
+            <button
+              onClick={() => setMembers(members.filter((m, i) => i !== index))}
+              className="btn_delete"
+            >
               <i className="far fa-trash-alt"></i>
             </button>
             {/* * Create a button to make the member the team leader and then it results in TeamLeader*/}
