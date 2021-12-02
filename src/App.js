@@ -28,10 +28,14 @@ function App() {
   const addMember = (e) => {
     e.preventDefault();
     const newMember = {
-      name: e.target.name.value,
-      id: members.length + 1
+      id: (members.length-1)+1 ,
+      name: e.target.name.value
+      
     };
     setMembers([...members, newMember]);
+    //Show the members
+    console.log(members);
+    console.log(newMember);
     e.target.name.value = '';
   };
 
