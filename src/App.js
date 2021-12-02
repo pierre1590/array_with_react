@@ -23,7 +23,7 @@ function App() {
 
     // Create a new state to save only Team leader
     const [teamLeader, setTeamLeader] = useState(members[0]);
-   
+    console.log(teamLeader);
   //Function add Member
   const addMember = (e) => {
     e.preventDefault();
