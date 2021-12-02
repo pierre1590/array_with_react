@@ -21,11 +21,15 @@ function App() {
     }
     ]);
 
+    // Create a new state to save only Team leader
+    const [teamLeader, setTeamLeader] = useState(members[0]);
+
   //Function add Member
   const addMember = (e) => {
     e.preventDefault();
     const newMember = {
       name: e.target.name.value,
+      id: members.length + 1
     };
     setMembers([...members, newMember]);
     e.target.name.value = '';
@@ -46,18 +50,19 @@ function App() {
       </form>
       <h2>Team Leader</h2> 
         {/* Show the team leader */}
-        <h3 className="teamLeader">{members.length > 0 ? members[0].name : <p style={{color:'red'}}>No Team Leader</p>}</h3>
+        <h3 className="teamLeader">{teamLeader.name}</h3>
       <h2>Team Members</h2>
       <ul>
        {/* Create a paragraph if the array is empty  */}
         {members.length === 0 ? <p style={{color:'red',fontSize:'30px'}}>No members</p> : members.map((member, index) => (
-          <li key={index} style={{fontSize:'1.5rem',listStyle:'none'}}>{member.name} 
+          <li key={index} style={{fontSize:'1.5rem',listStyle:'none'}}>{member.name}
               {/* Create a button to delete a member */}
               <button onClick={() => setMembers(members.filter((m, i) => i !== index))} className="btn_delete">
                    <i className="far fa-trash-alt" ></i>
               </button>
               {/* * Create a button to make the member the team leader and then it results in TeamLeader*/}
-              <button onClick={() => setMembers([member, ...members.filter((m, i) => i !== index)])} className="btn_leader"><i className="fas fa-user-tie"></i></button>
+              <button onClick={() => setTeamLeader(member)} className="btn_leader"><i className="fas fa-user-tie"></i></button>
+              
           </li>
         ))}
       </ul>
