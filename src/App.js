@@ -4,31 +4,31 @@ import './App.css';
 function App() {
   const [members, setMembers] = useState([
     {
-      id: 1,
+      id: 0,
       name: 'Piero Sabino',
     },
     {
-      id: 2,
+      id: 1,
       name: 'Edmondo di Ronza',
     },
     {
-      id: 3,
+      id: 2,
       name: 'Giorgio Coppola',
     },
     {
-      id: 4,
+      id: 3,
       name: 'Francesco Rua',
     }
     ]);
 
     // Create a new state to save only Team leader
     const [teamLeader, setTeamLeader] = useState(members[0]);
-
+   
   //Function add Member
   const addMember = (e) => {
     e.preventDefault();
     const newMember = {
-      id: (members.length-1)+1 ,
+      id: (members.length-1)+1,
       name: e.target.name.value
       
     };
