@@ -23,18 +23,16 @@ function App() {
 
     // Create a new state to save only Team leader
     const [teamLeader, setTeamLeader] = useState(members[0]);
-    console.log(teamLeader);
+    
   //Function add Member
   const addMember = (e) => {
     e.preventDefault();
     const newMember = {
       id: (members.length-1)+1,
       name: e.target.name.value
-      
     };
     setMembers([...members, newMember]);
-    //Show the members
-    console.log(members);
+    //Show the new member
     console.log(newMember);
     e.target.name.value = '';
   };
@@ -43,7 +41,9 @@ function App() {
   const handleReset = () => {
     setMembers([]);
   };
-
+  console.log(teamLeader);
+  console.log(members);
+  
  
   return (
     <div  style={{margin:'3% 40%'}}>
